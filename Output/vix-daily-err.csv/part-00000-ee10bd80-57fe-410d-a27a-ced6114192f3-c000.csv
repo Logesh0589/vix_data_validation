@@ -1,0 +1,5 @@
+vixDate,vixOpen,vixHigh,vixLow,vixClose,recordFlag,errDesc
+2004-07-21,140.0,16.46,13.91,16.41,false,VixOpen value is not between VixHigh and VixLow
+2015-05-20,12.9,13.27,120.62,12.88,false,VixHigh is smaller than VixLow
+2017-04-03,12.59,13.59,12.27,120.38,false,VixClose value is not between VixHigh and VixLow
+2028-08-03,12.43,12.46,11.07,11.64,false,VixDate: Future Date is found

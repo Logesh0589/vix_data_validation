@@ -48,8 +48,8 @@ public class vixDataValidation
         Dataset<Row> vixDataFileDF = vixDataGoodDF.selectExpr("cast(vixDate as Date) vixDate", "cast(vixOpen as double) vixOpen", "cast(vixHigh as double) vixHigh", "cast(vixLow as double) vixLow", "cast(vixClose as double) vixClose");
 
         //Create the output file for good and error records.
-        vixDataFileDF.write().mode(SaveMode.Overwrite).option("delimiter", ",").csv("/Users/yash/Desktop/Logesh/Tutorial/vix_data_validation/output/vix-daily-op.csv");
-        vixDataErrDF.write().mode(SaveMode.Overwrite).option("delimiter", ",").csv("/Users/yash/Desktop/Logesh/Tutorial/vix_data_validation/output/vix-daily-err.csv");
+        vixDataFileDF.write().mode(SaveMode.Overwrite).option("header", "true").option("delimiter", ",").csv("/Users/yash/Desktop/Logesh/Tutorial/vix_data_validation/output/vix-daily-op.csv");
+        vixDataErrDF.write().mode(SaveMode.Overwrite).option("header", "true").option("delimiter", ",").csv("/Users/yash/Desktop/Logesh/Tutorial/vix_data_validation/output/vix-daily-err.csv");
         for (Row line: vixDataErrDF.toJavaRDD().collect()) {
             System.out.println("*" + line);
         }
